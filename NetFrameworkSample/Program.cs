@@ -1,16 +1,12 @@
 ﻿using System;
-using System.IO;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using NLog;
 using NLog.Extensions.Logging;
-using ILogger = Microsoft.Extensions.Logging.ILogger;
-using LogLevel = Microsoft.Extensions.Logging.LogLevel;
 
-namespace ConsoleSample
+namespace NetFrameworkSample
 {
-    internal static class Program
+    internal class Program
     {
         private static void Main()
         {
@@ -20,7 +16,7 @@ namespace ConsoleSample
             var runner = servicesProvider.GetRequiredService<Runner>();
             runner.DoAction("Action1");
 
-            logger.Debug("outer context test");
+            logger.Fatal("outer context test");
             Console.WriteLine("Press ANY key to exit");
             Console.ReadKey();
             LogManager.Shutdown();
@@ -34,16 +30,16 @@ namespace ConsoleSample
                 {
                     // configure Logging with NLog
                     loggingBuilder.ClearProviders();
-                    loggingBuilder.SetMinimumLevel(LogLevel.Trace);
+                    loggingBuilder.SetMinimumLevel(Microsoft.Extensions.Logging.LogLevel.Trace);
                     loggingBuilder.AddNLog(new NLogProviderOptions {ParseMessageTemplates = true});
                 })
                 .BuildServiceProvider();
         }
     }
-
+    
     public class Runner
     {
-        private readonly ILogger _logger;
+        private readonly ILogger<Runner> _logger;
 
         public Runner(ILogger<Runner> logger)
         {
