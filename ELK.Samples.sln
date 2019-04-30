@@ -1,8 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleSample", "ConsoleSample\ConsoleSample.csproj", "{88A51835-F543-40A8-A1DF-8B487F105843}"
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.202
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleSample", "ConsoleSample\ConsoleSample.csproj", "{88A51835-F543-40A8-A1DF-8B487F105843}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebSample", "WebSample\WebSample.csproj", "{68E7F873-C855-4B17-B783-A6C030ADCFD7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebSample", "WebSample\WebSample.csproj", "{68E7F873-C855-4B17-B783-A6C030ADCFD7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetFrameworkSample", "NetFrameworkSample\NetFrameworkSample.csproj", "{96E48374-26B9-47BC-A161-B2C6F4BED75C}"
 EndProject
@@ -24,5 +27,11 @@ Global
 		{96E48374-26B9-47BC-A161-B2C6F4BED75C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{96E48374-26B9-47BC-A161-B2C6F4BED75C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{96E48374-26B9-47BC-A161-B2C6F4BED75C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {BC833966-377B-4675-BF92-26228281C30A}
 	EndGlobalSection
 EndGlobal

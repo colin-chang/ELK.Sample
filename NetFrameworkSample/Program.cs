@@ -3,6 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using NLog;
 using NLog.Extensions.Logging;
+using LogLevel = Microsoft.Extensions.Logging.LogLevel;
 
 namespace NetFrameworkSample
 {
@@ -25,12 +26,11 @@ namespace NetFrameworkSample
         private static IServiceProvider BuildDi()
         {
             return new ServiceCollection()
-                .AddSingleton<Runner>() // Runner is the custom class
+                .AddSingleton<Runner>()
                 .AddLogging(loggingBuilder =>
                 {
-                    // configure Logging with NLog
                     loggingBuilder.ClearProviders();
-                    loggingBuilder.SetMinimumLevel(Microsoft.Extensions.Logging.LogLevel.Trace);
+                    loggingBuilder.SetMinimumLevel(LogLevel.Trace);
                     loggingBuilder.AddNLog(new NLogProviderOptions {ParseMessageTemplates = true});
                 })
                 .BuildServiceProvider();
